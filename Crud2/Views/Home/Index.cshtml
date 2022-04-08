@@ -1,0 +1,30 @@
+﻿
+
+@model List <Crud2.DB_Context.student>
+@{
+    ViewBag.Title = "Home Page";
+}
+<table class=" table table-responsive table-hover">
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <td>Email</td>
+        <td>Address</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.id</td>
+    <td>@item.Name</td>
+    <td>@item.Email</td>
+    <td>@item.Address</td>
+    <td><a href="@Url.Action("Edit","Home",new { item.id })" class="btn btn-primary">Edit</a></td>
+    <td><a href="@Url.Action("Delete","Home",new { item.id })" class="btn btn-danger">delete </a></td>
+   
+</tr>
+    }
+
+</table>
+

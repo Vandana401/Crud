@@ -1,0 +1,26 @@
+﻿@model Crud2.Models.EmployeeModel
+@{
+    ViewBag.Title = "About";
+}
+
+
+
+@using (Html.BeginForm("About", "Home", FormMethod.Post))
+{     @Html.HiddenFor(n => n.Id);
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Address</label>
+        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+}
